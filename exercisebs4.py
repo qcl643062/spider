@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 __author__ = 'qcl'
 
+# 采用的是小猪短租的杭州4月14到4月16日的信息。取用了300个数据，如果你采用的不足300个，注意要去掉重复的。目前发现了一个问题是有人将
+# 同样的房源发了多次，目前并没有做这部分的校验工作。
+
 
 from bs4 import BeautifulSoup
 import requests
