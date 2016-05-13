@@ -18,7 +18,6 @@ class Myspider(RedisSpider):
 
         el = Pbdnof58Loader(response=response)
         el.add_xpath('title', '//h1/text()')
-
         el.add_xpath('price', '//span[contains(@class, "price c_f50")]/text()'.strip())
         quality = response.xpath('//ul[contains(@class, "suUl")]/li')
         quality = quality[1].xpath('div[contains(@class, "su_con")]/span/text()').extract()[0].strip()
