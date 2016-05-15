@@ -10,8 +10,7 @@ def create_session():
     cf.read('config.ini')
     cookies = cf.items('cookies')
     cookies = dict(cookies)
-    from pprint import pprint
-    pprint(cookies)
+    print cookies
     email = cf.get('info', 'email')
     password = cf.get('info', 'password')
 
