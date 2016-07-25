@@ -25,7 +25,6 @@ class Myspider(RedisSpider):
             sleep(1)
             el.add_value('UrlofPage', self.url + PageUrl[0])
         urls = response.xpath('//table[contains(@class, "tbimg")]/tr')
-        self.log(len(urls), level=log.DEBUG)
         for url in urls:
             url = url.xpath('td[contains(@class, "t")]/a/@href').extract()
             if len(url) == 1 and 'zhuan' not in url[0]:
