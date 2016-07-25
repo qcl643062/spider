@@ -28,8 +28,6 @@ class CleanPipeline(object):
 class MySQLPipeline(object):
     def __init__(self, dbpool):
         self.dbpool = dbpool
-        # self.errors = 0
-        # self.success = 0
 
     @classmethod
     def from_settings(cls, settings):
@@ -55,11 +53,8 @@ class MySQLPipeline(object):
             conn.execute("""
                 insert into 58pbdndb set title = %s, area = %s, price = %s, quality = %s, time = %s
             """, (item['title'], item['area'], item['price'], item['quality'], item['time']))
-            # self.success += 1
-            # spider.log(self.success, level=log.DEBUG)
+
         except MySQLdb.Error, e:
             spider.log("Mysql Error %d: %s" % (e.args[0], e.args[1]), level=log.DEBUG)
-            # self.errors += 1
-        # spider.log(self.errors, level=log.DEBUG)
 
 
